@@ -10,6 +10,8 @@ ADD REST ENDPOINTS
 ETC
 
 ## HOW TO RUN:
-http://localhost:8080/webtest/users
+To get view with users - http://localhost:8080/webtest/users
+API call to GET user - http://localhost:8080/webtest/rs/users/1
+API call to POST user - http://localhost:8080/webtest/rs/user {"name":"Travis Sivart","email":"ts@yahoo.com","depId":2}
 
 ## More sample urls:
