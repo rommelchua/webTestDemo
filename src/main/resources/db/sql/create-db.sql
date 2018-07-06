@@ -4,7 +4,7 @@ CREATE TABLE department (
 );
 
 CREATE TABLE user (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY auto_increment,
   name VARCHAR(30),
   email  VARCHAR(50),
   dep_id INTEGER,
