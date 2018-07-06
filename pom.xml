@@ -19,6 +19,8 @@
     <dbh2.version>1.4.192</dbh2.version>
     <junit.version>4.8.1</junit.version>
     <jdbc.version>5.0.7.RELEASE</jdbc.version>
+    <org.aspectj-version>1.7.4</org.aspectj-version>
+    <jackson.version>2.9.6</jackson.version>
   </properties>
 
   <dependencies>
@@ -71,26 +73,6 @@
       <version>${jstl.version}</version>
     </dependency>
 
-    <!-- VELOCITY 
-    <dependency>
-      <groupId>org.apache.velocity</groupId>
-      <artifactId>velocity</artifactId>
-      <version>1.7</version>
-    </dependency>
- 
-    <dependency>
-      <groupId>org.apache.velocity</groupId>
-      <artifactId>velocity-tools</artifactId>
-      <version>2.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context-support</artifactId>
-      <version>4.1.4.RELEASE</version>
-    </dependency>
-    -->
-
     <!-- DATABASE LIBRARIES -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -117,6 +99,24 @@
       <scope>runtime</scope>  
     </dependency>
     <!-- END DATABASE LIBRARIES -->
+
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>${org.aspectj-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
 
     <!-- TESTS -->
     <dependency>

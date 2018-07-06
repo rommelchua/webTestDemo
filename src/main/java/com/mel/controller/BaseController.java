@@ -20,6 +20,7 @@ public class BaseController {
   private static final String VIEW_INDEX = "index";
   private static final String VIEW_CITIES = "cities";
   private static final String VIEW_USERS = "users";
+  //todo:add try catch and use error.jsp
   private static final String ERROR_PAGE = "error";
   private final static org.slf4j.Logger logger = LoggerFactory.getLogger(BaseController.class);
 
@@ -50,6 +51,7 @@ public class BaseController {
     return VIEW_USERS;
   }
 
+  //todo:create cities table and dao for hibernate persistence POC
   private List<City> buildCitiesList(){
 	  City a = new City("Kabul","AFG","Kabol",1780000L);
 	  City b = new City("Qandahar","AFG","Qandahar",237500L);

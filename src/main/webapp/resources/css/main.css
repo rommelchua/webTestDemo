@@ -3,8 +3,15 @@
     padding: 10px;
 }
 
-.nav, .adbar {
+.nav {
     width: 10%;
+}
+
+.adbar {
+	width: 15%;
+    background-image: url("../images/bg-white-plain.jpg");
+    background-repeat: repeat;
+    height: 100%;
 }
 
 .content {

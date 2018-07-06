@@ -19,6 +19,10 @@ public class UserServiceImpl implements UserService {
     return userDao.findAllUsers();
   }
 
+  public User findUserById(Long id) {
+    return userDao.findByUserId(id);
+  }
+
   public UserDao getUserDao() {
     return userDao;
   }
