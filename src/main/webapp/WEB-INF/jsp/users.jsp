@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>LIST OF CITIES (JSP)</title>
+    <!-- styles -->
     <style>
     body {
       background-color: white;
@@ -13,8 +14,15 @@
     </style>
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/w3.css" />" rel="stylesheet">
+    <!-- END styles -->
+
+    <!-- scripts -->
     <script src="<c:url value="/resources/js/jquery-3.3.1.min.js" />"></script>
     <script src="<c:url value="/resources/js/main.js" />"></script>
+    <script type="text/javascript">
+    </script>
+    <!-- END scripts -->
+
   </head>
   <body>
     <h1>
@@ -38,7 +46,7 @@
             <td>${user.id}</td>
             <td>${user.name}</td>
             <td>${user.email}</td>
-            <td>${user.depId}</td>
+            <td>${departments[user.depId]}</td>
           </tr>
         </c:forEach>
         </table>
@@ -52,8 +60,12 @@
           <label>Email</label>
 
           <p>
-          <input class="w3-input" type="text"/>
-          <label>Department</label>
+          <select class="w3-select w3-border w3-margin-top" name="option">
+          <option value="" disabled selected>Department</option>
+          <c:forEach var="department" items="${departments}">
+          <option value="${department.key}">${department.value}</option>
+          </c:forEach>
+          </select>
 
           <p>
           <button class="w3-button w3-round-medium w3-green">SAVE</button>

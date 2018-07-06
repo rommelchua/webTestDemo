@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mel.model.City;
+import com.mel.service.DepartmentService;
 import com.mel.service.UserService;
 
 @Controller
@@ -24,6 +25,8 @@ public class BaseController {
 
   @Autowired
   private UserService userService;
+  @Autowired
+  private DepartmentService departmentService;
 
   @RequestMapping(value="/", method= RequestMethod.GET)
   public String welcome(ModelMap model){
@@ -43,6 +46,7 @@ public class BaseController {
   public String users(ModelMap model){
     logger.info("users page visited");
     model.addAttribute("users",userService.getAllUsers());
+    model.addAttribute("departments",departmentService.getDepartmentsAsMap());
     return VIEW_USERS;
   }
 
