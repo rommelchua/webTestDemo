@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -22,14 +21,12 @@ import com.mel.model.User;
 @Qualifier("userDao")
 public class UserDaoImpl implements UserDao {
   @Autowired
-  private DataSource dataSource;
   private JdbcTemplate jdbcTemplate;
 
   @Transactional(rollbackFor = Exception.class)
   public User createUser(User user) {
     KeyHolder key = new GeneratedKeyHolder();
     String query = "insert into user (name,email,dep_id) values (?,?,?)";
-    jdbcTemplate = new JdbcTemplate(dataSource);
     jdbcTemplate.update(new PreparedStatementCreator() {
         @Override
         public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
@@ -44,20 +41,24 @@ public class UserDaoImpl implements UserDao {
     return user;
   }
 
+  public User updateUser(User user) {
+    String query = "update user set name = ?,email = ?,dep_id = ? where id=?";
+    jdbcTemplate.update(query, new Object[]{user.getName(), user.getEmail(),user.getDepId(),user.getId()});
+    return user;
+  }
+
   public User findByUserId(Long userId) {
     String query = "select * from user where id = ?";
-    jdbcTemplate = new JdbcTemplate(dataSource);
     return jdbcTemplate.queryForObject(query, new Object[] {userId}, new BeanPropertyRowMapper<User>(User.class));
   }
 
   public List<User> findAllUsers() {
     String query = "select * from user";
-    jdbcTemplate = new JdbcTemplate(dataSource);
     List<User> users = jdbcTemplate.query(query, new BeanPropertyRowMapper<User>(User.class));
     return users;
   }
 
-  public void setDataSource(DataSource dataSource) {
-    this.dataSource = dataSource;
+  public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+    this.jdbcTemplate = jdbcTemplate;
   }
 }

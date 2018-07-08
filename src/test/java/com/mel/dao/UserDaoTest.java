@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -33,8 +33,9 @@ public class UserDaoTest {
     ds.setUsername("sa");
     ds.setPassword("");
 
+    JdbcTemplate jdbcTemplate = new JdbcTemplate(ds);
     userDao = new UserDaoImpl();
-    userDao.setDataSource(ds);
+    userDao.setJdbcTemplate(jdbcTemplate);
   }
 
   @Test

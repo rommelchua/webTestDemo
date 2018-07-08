@@ -7,5 +7,5 @@ import com.mel.model.Department;
 
 public interface DepartmentService {
   public List<Department> getAllDepartments();
-  public Map<Long,String> getDepartmentsAsMap();
+  public Map<Long,String> getAllDepartmentsAsMap();
 }

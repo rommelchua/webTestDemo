@@ -1,5 +1,7 @@
 package com.mel.model;
 
+import org.springframework.util.StringUtils;
+
 public class User {
   private Long id;
   private String name;
@@ -36,5 +38,19 @@ public class User {
 
   public void setDepId(Long depId) {
     this.depId = depId;
+  }
+
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    builder.append("{id: ");
+    builder.append(this.getId());
+    builder.append(", name: ");
+    builder.append(StringUtils.isEmpty(this.getName())?"null":this.getName());
+    builder.append(", email: ");
+    builder.append(StringUtils.isEmpty(this.getEmail())?"null":this.getEmail());
+    builder.append(", depId: ");
+    builder.append(this.getDepId());
+    builder.append("}");
+    return builder.toString();
   }
 }

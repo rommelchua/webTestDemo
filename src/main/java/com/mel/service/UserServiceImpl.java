@@ -23,8 +23,12 @@ public class UserServiceImpl implements UserService {
     return userDao.findByUserId(id);
   }
 
-  public User saveUser(User user) {
+  public User createUser(User user) {
     return userDao.createUser(user);
+  }
+
+  public User updateUser(User user) {
+    return userDao.updateUser(user);
   }
 
   public UserDao getUserDao() {

@@ -21,7 +21,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     return departmentDao.findAllDepartments();
   }
 
-  public Map<Long,String> getDepartmentsAsMap() {
+  public Map<Long,String> getAllDepartmentsAsMap() {
     return getAllDepartments().stream().collect(Collectors.toMap(Department::getId, Department::getName));
   }
 

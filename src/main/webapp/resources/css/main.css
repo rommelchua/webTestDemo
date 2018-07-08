@@ -3,25 +3,28 @@
     padding: 10px;
 }
 
-.nav {
+.nav, .adbar {
     width: 10%;
 }
 
 .adbar {
-	width: 15%;
     background-image: url("../images/bg-white-plain.jpg");
     background-repeat: repeat;
     height: 100%;
 }
 
 .content {
-    width: 75%;
+    width: 80%;
 }
 
 .row:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.clearLeftPadding {
+    padding-left: 0px !important;
 }
 
 #users {
