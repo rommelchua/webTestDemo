@@ -16,7 +16,7 @@ import com.mel.service.UserService;
 
 @Controller
 public class BaseController {
-  private static final String VIEW_INDEX = "index";
+  //private static final String VIEW_INDEX = "index";
   private static final String VIEW_CITIES = "cities";
   private static final String VIEW_USERS = "users";
   private static final String ERROR_PAGE = "error";
@@ -29,22 +29,8 @@ public class BaseController {
 
   @RequestMapping(value="/", method= RequestMethod.GET)
   public String welcome(ModelMap model){
-    logger.info("welcome page visited");
-    model.addAttribute("message","Greetings Visitor");
-    return VIEW_INDEX;
-  }
-
-  @RequestMapping(value="/cities", method= RequestMethod.GET)
-  public String cities(ModelMap model){
-    try {
-        logger.info("Cities page visited");
-        model.addAttribute("cities",buildCitiesList());
-        return VIEW_CITIES;
-    } catch (Exception e) {
-        logger.error("Error encountered while getting cities. Error is:");
-        e.printStackTrace();
-        return ERROR_PAGE;
-    }
+    logger.info("index page visited");
+    return users(model);
   }
 
   @RequestMapping(value="/users", method= RequestMethod.GET)
@@ -56,6 +42,19 @@ public class BaseController {
       return VIEW_USERS;
     } catch (Exception e) {
       logger.error("Error encountered while getting users. Error is:");
+      e.printStackTrace();
+      return ERROR_PAGE;
+    }
+  }
+
+  @RequestMapping(value="/cities", method= RequestMethod.GET)
+  public String cities(ModelMap model){
+    try {
+      logger.info("Cities page visited");
+      model.addAttribute("cities",buildCitiesList());
+      return VIEW_CITIES;
+    } catch (Exception e) {
+      logger.error("Error encountered while getting cities. Error is:");
       e.printStackTrace();
       return ERROR_PAGE;
     }

@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
   <head>
-    <title>LIST OF CITIES (JSP)</title>
+    <title>LIST OF REGISTERED USERS</title>
     <!-- styles -->
     <style>
     body {
@@ -30,10 +30,10 @@
 
   </head>
   <body>
-    <div class="w3-center">
-      <h1>LIST OF REGISTERED USERS</h1>
-      <h2>To EDIT an existing user, CLICK on the appropriate ROW.</h2>
-      <h2>This is a JSP page which mainly uses JQuery for event handling and AJAX REST calls for updating the page.</h2>
+    <div class="w3-center w3-panel w3-green">
+      <h2>LIST OF REGISTERED USERS</h2>
+      <h2><b>To EDIT an existing user, CLICK on the appropriate ROW.</b></h2>
+      <div class="w3-wide">This is a JSP page which mainly uses JQuery for event handling and AJAX REST calls for updating the page.</div>
     </div>
     <div class="row">
       <div class="column nav">
