@@ -10,10 +10,10 @@ ADD REST ENDPOINTS
 ETC
 
 ## HOW TO RUN:
-To get view with users - http://localhost:8080/webtest/users
-API call to GET user - http://localhost:8080/webtest/rs/users/1
-API call to POST user - http://localhost:8080/webtest/rs/user {"name":"Travis Sivart","email":"ts@yahoo.com","depId":2}
-API call to PUT (update existing) user - http://localhost:8080/webtest/rs/users/11111 {"id":11111,"name":"Travis Sivart","email":"ts@yahoo.com","depId":2}
+- To get view with users - http://localhost:8080/webtest/users
+- API call to GET user - http://localhost:8080/webtest/rs/users/1
+- API call to POST user - http://localhost:8080/webtest/rs/user {"name":"Travis Sivart","email":"ts@yahoo.com","depId":2}
+- API call to PUT (update existing) user - http://localhost:8080/webtest/rs/users/11111 {"id":11111,"name":"Travis Sivart","email":"ts@yahoo.com","depId":2}
 
 Note:
 - for PUT and POST, use application/json content type
